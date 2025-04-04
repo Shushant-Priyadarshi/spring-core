@@ -1,0 +1,34 @@
+Spring Bean Life Cycle:
+
+- In a normal Java application, objects are created and managed manually by the developer.
+  The life cycle follows these steps:
+
+  1) Instantiation → The object is created using new keyword.
+
+  2) Initialization → The constructor initializes the object's state.
+
+  3) Usage → The object is used for its intended purpose.
+
+  4) Garbage Collection → When no references to the object exist, Java's garbage collector reclaims memory.
+
+
+
+
+- Spring beans are managed by the Spring IoC (Inversion of Control) Container.
+  The lifecycle of a Spring bean involves more phases:
+
+  1) Instantiation → Spring creates the bean using reflection (no new keyword needed).
+
+  2) Populate Properties → Dependencies are injected (@Autowired or constructor injection).
+
+  3) Bean Initialization:
+        - If the bean implements InitializingBean, afterPropertiesSet() is called.
+        - If an init-method is defined in the configuration, it runs.
+        - If annotated with @PostConstruct, that method runs.
+
+  4) Bean Usage → The bean is ready to be used in the application.
+
+  5) Bean Destruction:
+        - If the bean implements DisposableBean, destroy() is called.
+        - If a destroy-method is defined, it runs.
+        - If annotated with @PreDestroy, that method runs.
