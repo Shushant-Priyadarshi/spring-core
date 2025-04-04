@@ -1,0 +1,11 @@
+- Important Annotations
+
+  1) @Component: It is a stereotype annotation which tells spring to
+                 take care of the object of the class which it is annotated.
+
+  2) @Component + Web logic  = @Controller & @RestController
+  3) @Component + Business logic  = @Service
+  4) @Component + Database/Dao  = @Repository
+  5) @Component + Configurations  = @Configurations
+
+
